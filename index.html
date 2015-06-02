@@ -12,13 +12,13 @@
 </head>
 
 <body>
-	<p>Guess a number between 1 and 10</p>
+	<p>Guess a number between 1 and 1000</p>
 	<input id='guess'/>
 	<button onclick='clicked()'>Guess</button>
 	<p id='result'></p>
 
 	<script>
-	var answer = Math.floor( Math.random() * 10 ) + 1;
+	var answer = Math.floor( Math.random() * 1000 ) + 1;
 
 	function clicked () {
 		var guess = document.getElementById( 'guess' );
