@@ -19,10 +19,10 @@
 
 	<script>
 	var answer = Math.floor( Math.random() * 1000 ) + 1;
+	var guess = document.getElementById( 'guess' );
+	var result = document.getElementById( 'result' );
 
 	function clicked () {
-		var guess = document.getElementById( 'guess' );
-		var result = document.getElementById( 'result' );
 
 		var value = parseInt( guess.value );
 
@@ -35,6 +35,7 @@
 		else {
 			result.innerHTML = 'too high';
 		}
+
 	}
 
 	</script>
