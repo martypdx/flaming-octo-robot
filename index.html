@@ -12,29 +12,37 @@
 </head>
 
 <body>
-	<p>Guess a number between 1 and 1000</p>
+	<p>Guess a number between 1 and 10. You have 3 guesses!</p>
 	<input id='guess'/>
 	<button onclick='clicked()'>Guess</button>
 	<p id='result'></p>
 
 	<script>
-	var answer = Math.floor( Math.random() * 1000 ) + 1;
+	var guesses = 3;
+	var answer = Math.floor( Math.random() * 10 ) + 1;
 	var guess = document.getElementById( 'guess' );
 	var result = document.getElementById( 'result' );
 
 	function clicked () {
 
-		var value = parseInt( guess.value );
-
-		if ( value == answer ) {
-			result.innerHTML = 'you got it!';
-		}
-		else if ( value < answer ) {
-			result.innerHTML = 'too low';
+		if ( !guesses ) {
+			result.innerHTML = 'sorry, out of guesses!';
 		}
 		else {
-			result.innerHTML = 'too high';
+			var value = parseInt( guess.value );
+
+			if ( value == answer ) {
+				result.innerHTML = 'you got it!';
+			}
+			else if ( value < answer ) {
+				result.innerHTML = 'too low';
+			}
+			else {
+				result.innerHTML = 'too high';
+			}
 		}
+
+		guesses--;
 
 	}
 
